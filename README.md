@@ -69,4 +69,4 @@ text
 
 1. **Clone o repositório**
 ```bash
-git clone https://github.com/evelyn-8888/flor_arte.git
+git clone https://github.com/evelyn-8888/floricultura.git
