@@ -54,33 +54,7 @@ Criar uma plataforma online completa para venda de flores, com:
 - **GitHub** - Repositório remoto
 - **VS Code** - Editor de código
 
-## 📁 Estrutura do Projeto
-floricultura/
-├── public/
-│ ├── css/
-│ │ ├── style.css
-│ │ ├── produtos.css
-│ │ ├── footer.css
-│ │ └── carrinho.css
-│ ├── src/
-│ │ └── js/
-│ │ ├── firebase.js
-│ │ ├── auth.js
-│ │ ├── carrinho.js
-│ │ └── faleconosco.js
-│ ├── imagem/
-│ │ ├── home.jpg
-│ │ ├── quemsomos.jpg
-│ │ └── buques/
-│ ├── index.html
-│ ├── buques.html
-│ ├── cestas.html
-│ ├── carrinho.html
-│ └── faleconosco.html
-├── .gitignore
-├── firebase.json
-├── .firebaserc
-└── README.md
+
 
 text
 
