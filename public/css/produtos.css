@@ -1,0 +1,188 @@
+:root{
+    --pink:#d88ba0;
+    --text:#7d4b5c;
+    --white:#fff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+    text-decoration:none;
+}
+
+html{
+    font-size:62.5%;
+}
+
+body{
+    background:#fff;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:2rem;
+    left:50%;
+    transform:translateX(-50%);
+    width:80%;
+    background:rgba(255,255,255,.95);
+    border-radius:5rem;
+    padding:1.5rem 4rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo{
+    font-size:2.5rem;
+    font-weight:600;
+    color:var(--text);
+}
+
+.logo span{
+    color:var(--pink);
+}
+
+.navbar a{
+    margin:0 1rem;
+    color:var(--text);
+    font-size:1.6rem;
+}
+
+.icons a{
+    color:var(--text);
+    margin-left:1rem;
+    font-size:2rem;
+}
+
+#toggler,
+.fa-bars{
+    display:none;
+}
+
+/* BANNER */
+
+.hero-buque{
+    min-height:70vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    background:
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+    url('/public/imagem/home.jpg');
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-buque .content{
+    color:#fff;
+}
+
+.hero-buque h3{
+    font-size:6rem;
+}
+
+.hero-buque span{
+    font-size:3rem;
+    display:block;
+    margin:1rem 0;
+}
+
+.hero-buque p{
+    font-size:2rem;
+    margin-bottom:3rem;
+}
+
+.btn{
+    padding:1rem 3rem;
+    border:2px solid #fff;
+    border-radius:5rem;
+    color:#fff;
+}
+
+/* PRODUTOS */
+
+.products{
+    padding:5rem 9%;
+}
+
+.heading{
+    text-align:center;
+    font-size:4rem;
+    margin-bottom:4rem;
+}
+
+.heading span{
+    color:var(--text);
+}
+
+.box-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:2rem;
+}
+
+.box{
+    border:1px solid #eee;
+    overflow:hidden;
+    position:relative;
+}
+
+.discount{
+    position:absolute;
+    top:1rem;
+    left:1rem;
+    background:#ffdce7;
+    color:#c44d75;
+    padding:.5rem 1rem;
+    border-radius:.5rem;
+    z-index:1;
+}
+
+.box .image{
+    position:relative;
+}
+
+.box .image img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+}
+
+.box .image .icons{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    display:flex;
+}
+
+.box .image .icons a{
+    flex:1;
+    text-align:center;
+    background:var(--text);
+    color:#fff;
+    padding:1.5rem;
+}
+
+.content{
+    padding:2rem;
+    text-align:center;
+}
+
+.content h3{
+    font-size:2rem;
+    margin-bottom:1rem;
+}
+
+.price{
+    font-size:2rem;
+    color:var(--text);
+}
+

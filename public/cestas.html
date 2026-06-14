@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cestas - Flower Shop</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/produtos.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <input type="checkbox" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="index.html" class="logo">
+        Flower<span>.</span>
+    </a>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="index.html#aboutus">Quem Somos</a>
+
+        <div class="dropdown">
+            <a href="#">Produtos</a>
+            <div class="dropdown-content">
+                <a href="buques.html">Buquês</a>
+                <a href="cestas.html">Cestas</a>
+                <a href="presentes.html">Presentes</a>
+            </div>
+        </div>
+
+        <a href="index.html#avaliacoes">Avaliações</a>
+        <a href="faleconosco.html">Contato</a>
+    </nav>
+
+    <div class="icons">
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <a href="#" class="fas fa-user"></a>
+    </div>
+
+</header>
+
+<!-- BANNER -->
+
+<section class="hero-buque">
+
+    <div class="content">
+        <h3>Nossas Cestas</h3>
+        <span>Flores para momentos especiais</span>
+
+        <p>
+            Surpreenda quem você ama com flores únicas e cheias de significado.
+        </p>
+
+        <a href="#products" class="btn">
+            Ver Produtos
+        </a>
+    </div>
+
+</section>
+
+<!-- PRODUTOS -->
+<section class="products" id="products">
+    <h1 class="heading">Nossas<span> Cestas</span></h1>
+
+    <div class="box-container">
+
+        <!-- Produto 1 - Cesta Primavera -->
+        <div class="box">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="imagem/cestas/cesta01.jpg" alt="Cesta">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <button class="cart-btn" onclick="adicionarAoCarrinho('Cesta Primavera', 189.90, 'imagem/cestas/cesta01.jpg')">Comprar</button>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Cesta Primavera</h3>
+                <div class="price">R$ 189,90</div>
+            </div>
+        </div>
+
+        <!-- Produto 2 - Cesta Premium -->
+        <div class="box">
+            <span class="discount">-15%</span>
+            <div class="image">
+                <img src="imagem/cestas/cesta02.jpg" alt="Cesta">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <button class="cart-btn" onclick="adicionarAoCarrinho('Cesta Premium', 249.90, 'imagem/cestas/cesta02.jpg')">Comprar</button>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Cesta Premium</h3>
+                <div class="price">R$ 249,90</div>
+            </div>
+        </div>
+
+        <!-- Produto 3 - Cesta Romântica -->
+        <div class="box">
+            <span class="discount">-5%</span>
+            <div class="image">
+                <img src="imagem/cestas/cesta033.jpg" alt="Cesta">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <button class="cart-btn" onclick="adicionarAoCarrinho('Cesta Romântica', 159.90, 'imagem/cestas/cesta033.jpg')">Comprar</button>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Cesta Romântica</h3>
+                <div class="price">R$ 159,90</div>
+            </div>
+        </div>
+
+        <!-- Produto 4 - Cesta Luxo -->
+        <div class="box">
+            <span class="discount">-20%</span>
+            <div class="image">
+                <img src="imagem/cestas/cesta04.jpg" alt="Cesta">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <button class="cart-btn" onclick="adicionarAoCarrinho('Cesta Luxo', 299.90, 'imagem/cestas/cesta04.jpg')">Comprar</button>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Cesta Luxo</h3>
+                <div class="price">R$ 299,90</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER ESTÁTICO -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">Flower<span>.</span></a>
+                <p>Transformando ambientes e emocionando pessoas através da beleza das flores e plantas desde 2018.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h5>Institucional</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#aboutus">Quem Somos</a></li>
+                    <li><a href="buques.html">Buquês</a></li>
+                    <li><a href="cestas.html">Cestas</a></li>
+                    <li><a href="faleconosco.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h5>Contato</h5>
+                <p><i class="fas fa-map-marker-alt"></i> Rua Jurandyr de Oliveira, 46<br>Mogi das Cruzes – SP</p>
+                <p><i class="fas fa-phone-alt"></i> (11) 4799-9999</p>
+                <p><i class="fas fa-envelope"></i> contato@floriculturaweb.com.br</p>
+                <p><i class="fas fa-clock"></i> Seg–Sex: 9h às 18h<br>Sáb: 9h às 13h</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Floricultura Web. Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a href="https://github.com/evelyn-8888"/" target="_blank" rel="noopener">Evelyn Assunção</a></p>
+    </div>
+</footer>
+  <script type="module" src="src/js/carrinho.js"></script>
+  <script type="module" src="src/js/auth.js"></script>
+    <script src="src/js/admin.js"></script>
+    <script src="src/js/firebase.js"></script>
+    <script src="src/js/componentLoader.js"></script>
+
+</body>
+</html>

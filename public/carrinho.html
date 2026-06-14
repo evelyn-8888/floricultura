@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carrinho de Compras - Floricultura Web</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Font Awesome (para ícones do header/footer) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/carrinho.css">
+        <link rel="stylesheet" href="css/footer.css">
+<body>
+
+    <!-- HEADER (igual ao das outras páginas) -->
+    <header>
+        <input type="checkbox" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a href="index.html" class="logo">Flower<span>.</span></a>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="index.html#aboutus">Quem Somos</a>
+            <div class="dropdown">
+                <a href="#">Produtos</a>
+                <div class="dropdown-content">
+                    <a href="buques.html">Buquês</a>
+                    <a href="cestas.html">Cestas</a>
+                    <a href="presentes.html">Presentes</a>
+                </div>
+            </div>
+            <a href="index.html#review">Avaliações</a>
+            <a href="faleconosco.html">Contato</a>
+        </nav>
+
+        <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="carrinho.html" class="fas fa-shopping-cart" style="position: relative;">
+                <span id="contador-carrinho" style="position: absolute; top: -8px; right: -12px; background-color: #e74c3c; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px; font-weight: bold;">0</span>
+            </a>
+            <a href="#" class="fas fa-user"></a>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO DO CARRINHO -->
+    <div class="cart-container">
+        <div class="cart-header">
+            <h1>Meu Carrinho</h1>
+            <p>Revise seus itens antes de finalizar a compra</p>
+        </div>
+
+        <div class="cart-steps">
+            <div class="step completed"><div class="step-number">1</div><div class="step-title">Carrinho</div></div>
+            <div class="step"><div class="step-number">2</div><div class="step-title">Pagamento</div></div>
+            <div class="step"><div class="step-number">3</div><div class="step-title">Confirmação</div></div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="table-responsive">
+                        <table class="cart-table" id="cart-items">
+                            <thead><tr><th>Produto</th><th>Preço</th><th>Quantidade</th><th>Subtotal</th><th></th></tr></thead>
+                            <tbody id="cart-items-body"></tbody>
+                        </table>
+                    </div>
+                    <div id="empty-cart-message" class="empty-cart" style="display: none;">
+                        <i class="bi bi-cart-x"></i>
+                        <h3>Seu carrinho está vazio</h3>
+                        <p>Adicione produtos para continuar com sua compra</p>
+                        <a href="index.html" class="btn btn-success">Voltar às Compras</a>
+                    </div>
+                    <div class="cart-actions" id="cart-actions" style="display: none;">
+                        <a href="index.html" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-2"></i>Continuar Comprando</a>
+                        <button class="btn btn-outline-danger" id="clear-cart"><i class="bi bi-trash me-2"></i>Limpar Carrinho</button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="cart-summary" id="cart-summary">
+                        <h4>Resumo do Pedido</h4>
+                        <div class="summary-row"><span>Subtotal</span><span id="subtotal">R$ 0,00</span></div>
+                        <div class="summary-row"><span>Frete</span><span id="shipping">R$ 0,00</span></div>
+                        <div class="summary-row"><span>Desconto</span><span class="text-success" id="discount">-R$ 0,00</span></div>
+                        <div class="summary-row total"><span>Total</span><span id="total">R$ 0,00</span></div>
+
+                        <form id="shipping-form" class="shipping-form">
+                            <h5 class="mt-4 mb-3">Dados de Entrega</h5>
+                            <div class="mb-3"><label for="customer-name" class="form-label">Nome Completo</label><input type="text" class="form-control" id="customer-name" required></div>
+                            <div class="mb-3"><label for="customer-address" class="form-label">Endereço</label><input type="text" class="form-control" id="customer-address" required></div>
+                            <div class="row g-2 mb-3">
+                                <div class="col-md-6"><label for="customer-city" class="form-label">Cidade</label><input type="text" class="form-control" id="customer-city" required></div>
+                                <div class="col-md-6"><label for="customer-zip" class="form-label">CEP</label><input type="text" class="form-control" id="customer-zip" required></div>
+                            </div>
+                            <button type="submit" class="btn btn-success" id="checkout-btn"><i class="bi bi-credit-card me-2"></i>Finalizar Compra</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER ESTÁTICO (único) -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Flower<span>.</span></a>
+                    <p>Transformando ambientes e emocionando pessoas através da beleza das flores e plantas desde 2018.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5>Institucional</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#aboutus">Quem Somos</a></li>
+                        <li><a href="buques.html">Buquês</a></li>
+                        <li><a href="cestas.html">Cestas</a></li>
+                        <li><a href="faleconosco.html">Fale Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h5>Contato</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Jurandyr de Oliveira, 46<br>Mogi das Cruzes – SP</p>
+                    <p><i class="fas fa-phone-alt"></i> (11) 4799-9999</p>
+                    <p><i class="fas fa-envelope"></i> contato@floriculturaweb.com.br</p>
+                    <p><i class="fas fa-clock"></i> Seg–Sex: 9h às 18h<br>Sáb: 9h às 13h</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Floricultura Web. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <a href="https://github.com/evelyn-8888/" target="_blank">Evelyn Assunção</a></p>
+        </div>
+    </footer>
+
+    <!-- MODAL LIMPAR CARRINHO -->
+    <div class="modal fade" id="clearCartModal" tabindex="-1" aria-labelledby="clearCartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="clearCartModalLabel">Limpar Carrinho</h5>
+                    <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="bi bi-exclamation-triangle text-warning display-4 mb-3"></i>
+                    <p class="fs-5">Tem certeza que deseja limpar seu carrinho?</p>
+                    <p>Todos os itens serão removidos.</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-danger" id="confirm-clear-cart">Limpar Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script type="module" src="src/js/firebase.js"></script>
+    <script type="module" src="src/js/carrinho.js"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+
+<!doctype html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fale Conosco - Floricultura Web</title>
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/faleconosco.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+
+    <style>
+        :root {
+            --primary-color:#d88ba0;
+            --primary-dark:#7d4b5c;
+            --primary-light: #fff;
+            --secondary-color: #ff8f00;
+            --secondary-dark: #e65100;
+            --accent-color: #ffd54f;
+            --light-bg: #f8f9fa;
+            --dark-text: #263238;
+            --light-text: #f5f5f5;
+            --gray-text: #757575;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            --card-hover-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+        
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-text);
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+      
+<body>
+
+    <header>
+    <input type="checkbox" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+    <a href="index.html" class="logo">Flower<span>.</span></a>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="index.html#aboutus">Quem Somos</a>
+        <div class="dropdown">
+            <a href="#">Produtos</a>
+            <div class="dropdown-content">
+                <a href="buques.html">Buquês</a>
+                <a href="cestas.html">Cestas</a>
+                <a href="presentes.html">Presentes</a>
+            </div>
+        </div>
+        <a href="index.html#review">Avaliações</a>
+        <a href="faleconosco.html">Contato</a>
+    </nav>
+    <div class="icons">
+        <a href="#" class="fas fa-heart"></a>
+        <a href="carrinho.html" class="fas fa-shopping-cart" style="position: relative;">
+            <span id="contador-carrinho" style="position: absolute; top: -8px; right: -12px; background-color: #e74c3c; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px; font-weight: bold;">0</span>
+        </a>
+        <a href="#" class="fas fa-user"></a>
+    </div>
+</header>
+
+
+    
+    <section class="contact-hero">
+        <div class="container text-center">
+            <h1 class="contact-hero-title animate__animated animate__fadeInDown">Fale Conosco</h1>
+            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Estamos aqui para ajudar e responder todas as suas dúvidas</p>
+        </div>
+    </section>
+    
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-card animate__animated animate__fadeInUp">
+                        <h2 class="section-title text-center mb-4">Envie sua Mensagem</h2>
+                        <p class="text-center mb-5">Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
+                        
+                        <form method="POST" id="contatoForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" id="txtNomeCompleto" name="nome" class="form-control" placeholder=" " required>
+                                        <label for="txtNomeCompleto">Nome Completo</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" id="txtEmail" name="email" class="form-control" placeholder=" " required>
+                                        <label for="txtEmail">E-mail</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="tel" id="txtTelefone" name="telefone" class="form-control" placeholder=" ">
+                                        <label for="txtTelefone">Telefone (opcional)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="txtAssunto" name="assunto">
+                                            <option value="Dúvida">Dúvida</option>
+                                            <option value="Sugestão">Sugestão</option>
+                                            <option value="Reclamação">Reclamação</option>
+                                            <option value="Elogio">Elogio</option>
+                                            <option value="Outro">Outro</option>
+                                        </select>
+                                        <label for="txtAssunto">Assunto</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating mb-4">
+                                        <textarea id="txtMensagem" name="mensagem" class="form-control" placeholder=" " style="height: 150px" required></textarea>
+                                        <label for="txtMensagem">Mensagem</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-success me-3">
+                                        <i class="bi bi-send-fill me-2"></i>Enviar
+                                    </button>
+                                    <button type="reset" class="btn btn-outline-success">
+                                        <i class="bi bi-eraser-fill me-2"></i>Limpar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div id="contactSuccessModal" class="modal-overlay" style="display: none;">
+        <div class="modal-box">
+            <button class="modal-close-x" onclick="closeContactModal()">&#10005;</button>
+            <h2><i class="bi bi-flower1" style="font-size: 1.6rem; color: #2e7d32; vertical-align: middle; margin-right: 6px;"></i> Mensagem enviada!</h2>
+            <p>Entraremos em contato em breve. Obrigado pela sua mensagem.</p>
+        </div>
+    </div>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Outras Formas de Contato</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="contact-info-card animate__animated animate__fadeIn">
+                        <div class="contact-icon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <h4>Telefone</h4>
+                        <p>(11) 4799-9999</p>
+                        <p>Segunda a Sexta: 9h às 18h</p>
+                        <p>Sábado: 9h às 13h</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="contact-info-card animate__animated animate__fadeIn animate__delay-1s">
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <h4>E-mail</h4>
+                        <p>contato@floriculturaweb.com.br</p>
+                        <p>suporte@floriculturaweb.com.br</p>
+                        <p>Respondemos em até 24h</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="contact-info-card animate__animated animate__fadeIn animate__delay-2s">
+                        <div class="contact-icon">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <h4>Endereço</h4>
+                        <p>Rua Jurandyr de Oliveira, 46</p>
+                        <p>Mogi das Cruzes - SP</p>
+                        <p>CEP: 08773-000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Perguntas Frequentes</h2>
+            
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            Qual o prazo para resposta das mensagens?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Nossa equipe se compromete a responder todas as mensagens em até 24 horas úteis. Para assuntos mais urgentes, recomendamos o contato por telefone.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            Quais são os horários de atendimento?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Atendemos de segunda a sexta-feira das 9h às 18h, e aos sábados das 9h às 13h. Não trabalhamos aos domingos e feriados.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                            Posso visitar a loja física?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Sim! Nossa loja física está localizada na Rua Jurandyr de Oliveira, 46 em Mogi das Cruzes - SP. Recomendamos agendar sua visita pelo telefone para garantir melhor atendimento.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                            Como faço para rastrear meu pedido?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Após a confirmação do pedido, enviamos um e-mail com o código de rastreio. Caso não tenha recebido, entre em contato conosco pelo telefone ou WhatsApp.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div id="footer-container"></div>
+
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-content">
+            <i class="bi bi-flower1 loading-logo"></i>
+        </div>
+    </div>
+
+
+     <!-- FOOTER ESTÁTICO -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">Flower<span>.</span></a>
+                <p>Transformando ambientes e emocionando pessoas através da beleza das flores e plantas desde 2018.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h5>Institucional</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#aboutus">Quem Somos</a></li>
+                    <li><a href="buques.html">Buquês</a></li>
+                    <li><a href="cestas.html">Cestas</a></li>
+                    <li><a href="presentes.html">Presentes</a></li>
+                    <li><a href="faleconosco.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h5>Contato</h5>
+                <p><i class="fas fa-map-marker-alt"></i> Rua Jurandyr de Oliveira, 46<br>Mogi das Cruzes – SP</p>
+                <p><i class="fas fa-phone-alt"></i> (11) 4799-9999</p>
+                <p><i class="fas fa-envelope"></i> contato@floriculturaweb.com.br</p>
+                <p><i class="fas fa-clock"></i> Seg–Sex: 9h às 18h<br>Sáb: 9h às 13h</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Floricultura Web. Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a href="https://github.com/evelyn-8888/" target="_blank" rel="noopener">Evelyn Assunção</a></p>
+    </div>
+</footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+   <script type="module" src="src/js/carrinho.js"></script>
+    
+    <script src="src/js/contato.js"></script>
+ 
+
+</body>
+
+
+</html>

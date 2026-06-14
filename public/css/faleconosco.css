@@ -1,0 +1,170 @@
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.contact-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../imagem/faleconosco.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding:100px 0;
+}
+
+.contact-hero-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Corrigido: removido o ";c" que quebrava o código */
+}
+
+/* ==========================================================================
+   Cards de Conteúdo
+   ========================================================================== */
+.contact-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: white;
+    padding: 30px;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info-card {
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   Títulos e Elementos de Texto
+   ========================================================================== */
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+/* Linha decorativa abaixo do título */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%); /* Ajustado para manter a linha centralizada se o título for centralizado */
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+/* ==========================================================================
+   Formulários e Inputs
+   ========================================================================== */
+.form-control, .form-select {
+    border-radius: 10px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow:palevioletred;
+}
+
+/* ==========================================================================
+   Botões
+   ========================================================================== */
+.btn-success {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 8px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.btn-success:hover {
+    background-color: #1b5e20;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline-success {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 10px;
+    padding: 8px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-success:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ==========================================================================
+   Componente Accordion (FAQ)
+   ========================================================================== */
+.accordion-item {
+    border: none !important;
+}
+
+.accordion-button {
+    background-color: var(--light-bg);
+    font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--primary-dark);
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(46, 125, 50, 0.25);
+    border-color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Regras de Responsividade (Media Queries)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .contact-hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .contact-card {
+        padding: 20px;
+    }
+    
+    .contact-info-card {
+        padding: 20px;
+    }
+}
+
+/* Ajustes finos para botões em telas pequenas/médias */
+@media (min-width: 360px) and (max-width: 900px) {
+    .btn-success, .btn-outline-success {
+        width: 100%; /* Faz os botões ocuparem a largura total para não quebrarem layout */
+        margin-bottom: 10px;
+        padding: 12px;
+    }
+}
