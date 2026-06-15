@@ -251,29 +251,30 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
+async function saveUserToFirestore(user) {
+    if (!firebase.firestore) return;
 
-    // Salvar usuário no Firestore (opcional)
-    async function saveUserToFirestore(user) {
-        if (!firebase.firestore) return;
-        
-        try {
-            const db = firebase.firestore();
-            const userRef = db.collection('users').doc(user.uid);
-            
-            await userRef.set({
-                uid: user.uid,
-                email: user.email,
-                name: user.displayName,
-                photoURL: user.photoURL,
-                lastLogin: firebase.firestore.FieldValue.serverTimestamp(),
-                createdAt: firebase.firestore.FieldValue.serverTimestamp()
-            }, { merge: true });
-            
-            console.log("Usuário salvo no Firestore");
-        } catch (error) {
-            console.warn("Erro ao salvar usuário no Firestore:", error);
-        }
+    try {
+        const db = firebase.firestore();
+        const userRef = db.collection('users').doc(user.uid);
+
+        const isAdmin = user.email === "evelyn.assuncao@aluno.ifsp.edu.br";
+
+        await userRef.set({
+            uid: user.uid,
+            email: user.email,
+            name: user.displayName,
+            photoURL: user.photoURL,
+            role: isAdmin ? "admin" : "user",
+            lastLogin: firebase.firestore.FieldValue.serverTimestamp(),
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        }, { merge: true });
+
+        console.log("Usuário salvo no Firestore");
+    } catch (error) {
+        console.warn("Erro ao salvar usuário no Firestore:", error);
     }
+}
 
     // Evento de clique no ícone
     let isAuthProcessing = false;
@@ -300,6 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Verificar autenticação ao carregar página
     console.log("Sistema de autenticação carregado");
 });
+
 
 // Exportar auth para uso em outros módulos (se necessário)
 window.auth = firebase.auth();
