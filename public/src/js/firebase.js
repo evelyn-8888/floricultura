@@ -17,4 +17,4 @@ if (!firebase.apps.length) {
 window.auth = firebase.auth();
 window.db = firebase.firestore();
 
-console.log("✅ Firebase inicializado");
+console.log(" Firebase inicializado");

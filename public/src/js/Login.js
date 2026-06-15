@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Elemento do ícone de usuário (suporta múltiplos seletores)
-    const loginIcon = document.querySelector(".fa-user, .user-icon, [data-login-icon]");
+    const loginIcon = document.querySelector(".fa-user, [data-login-icon]");
     if (!loginIcon) {
         console.warn("Ícone de usuário não encontrado. Verifique se o elemento existe.");
         return;
